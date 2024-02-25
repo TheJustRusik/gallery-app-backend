@@ -14,7 +14,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(authCustomizer -> authCustomizer
-                        .requestMatchers(HttpMethod.GET, "api/content_images").permitAll())
-                .build();
+                        .anyRequest().permitAll()
+                ).build();
     }
 }
